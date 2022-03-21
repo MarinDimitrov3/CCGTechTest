@@ -1,0 +1,11 @@
+TODO:
+
+1. Add exception handling for cases such as
+    - Invalid csv format columns which can't be transformed to JSON
+    - Invalid file input
+    
+2. Add more unit tests for each class and then integration tests to test the interaction between the classes
+
+3. Improve the UI to allow the user to specify source and select conversion goal
+
+4. Since there is the ILinesReader interface a database lines reader could be implemented and injected easily
