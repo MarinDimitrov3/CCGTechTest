@@ -25,18 +25,14 @@ namespace CCGTechTest.Generators
             return GenerateCsvModelFromLines(lines);
         }
 
-        private CsvModel GenerateCsvModelFromLines(string[] lines)
+        private CsvModel GenerateCsvModelFromLines(IList<string[]> lines)
         {
-            var csv = new List<string[]>();
-            foreach (string line in lines)
-                csv.Add(line.Split(','));
-
-            var properties = lines[0].Split(',');
+            var properties = lines[0];
             var nestedListObject = new List<IDictionary<string, dynamic>>();
 
-            for (int i = 1; i < lines.Length; i++)
+            for (int i = 1; i < lines.Count; i++)
             {
-                var rowObject = GetNestedCsvObject(csv[i], properties);
+                var rowObject = GetNestedCsvObject(lines[i], properties);
                 nestedListObject.Add(rowObject);
             }
 

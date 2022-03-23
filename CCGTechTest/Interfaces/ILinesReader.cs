@@ -8,6 +8,6 @@ namespace CCGTechTest.Interfaces
 {
     public interface ILinesReader
     {
-        string[] GetLines();
+        IList<string[]> GetLines();
     }
 }

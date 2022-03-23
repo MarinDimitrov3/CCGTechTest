@@ -15,9 +15,14 @@ namespace CCGTechTest.Helpers
         {
             FileName = filename;
         }
-        public string[] GetLines()
+
+        public IList<string[]> GetLines()
         {
-            return File.ReadAllLines(FileName);
+            var csv = new List<string[]>();
+            var lines = File.ReadAllLines(FileName);
+            foreach (string line in lines)
+                csv.Add(line.Split(','));
+            return csv;
         }
     }
 }
